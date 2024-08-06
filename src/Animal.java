@@ -1,10 +1,18 @@
+import java.util.List;
 public abstract class Animal {
-    lifeExpectancy
-            health
-    eats
-            gender
-    age
-    getAge(),
-    getGender(), getLifeExpectancy(), canEat(String), that returns true if the Animal can eat that food, eat(),
-    decreaseHealth(), treat(), and the abstract method aMonthPasses(),
+    protected int lifeExpectancy;
+    protected int health;
+    protected List<Foods> eats;
+    protected Gender gender;
+    protected int age;
+    protected String img;
+    public abstract String getImg();
+    public abstract int getAge();
+    public abstract Gender getGender();
+    public abstract int getLifeExpectancy();
+    public abstract boolean canEat(String foodName);
+    public abstract void eat();
+    public abstract void decreaseHealth();
+    public abstract void treat();
+    public abstract void aMonthPasses();
 }
