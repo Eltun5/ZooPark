@@ -15,6 +15,7 @@ public class Chimpanzee extends APE{
                  '-- "--'  '--'
                 """;
         super.lifeExpectancy=24;
+        super.animalType=AnimalType.CHIMPANZEE;
     }
     @Override
     public void treat() {
@@ -28,7 +29,7 @@ public class Chimpanzee extends APE{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
+        //eat();
         //clean waste
     }
 }

@@ -11,6 +11,7 @@ public class Bear extends Animal {
 `-))  `-))  `-)) `-))""";
         super.lifeExpectancy=18;
         super.eats= List.of(Food.FISH,Food.STEAK);
+        super.animalType=AnimalType.BEAR;
     }
     @Override
     public void treat() {
@@ -24,7 +25,7 @@ public class Bear extends Animal {
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
-        //clean waste
+        super.age++;
+
     }
 }

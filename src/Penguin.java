@@ -11,6 +11,7 @@ public class Penguin extends Animal{
                          _\\_):,_""";
         super.lifeExpectancy=15;
         super.eats= List.of(Food.FISH,Food.ICE_CREAM);
+        super.animalType=AnimalType.PENGUIN;
     }
     @Override
     public void treat() {
@@ -24,7 +25,7 @@ public class Penguin extends Animal{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
+        //eat();
         //clean waste
     }
 }

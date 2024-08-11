@@ -15,45 +15,8 @@ public class Tiger extends BigCat{
     """;
         super.health=10;
         super.gender=(int)(Math.random()*2)==1?Gender.MALE:Gender.FEMALE;
+        super.animalType=AnimalType.TIGER;
     }
-
-    @Override
-    public String getImg() {
-        return super.img;
-    }
-
-    @Override
-    public int getAge() {
-        return super.age;
-    }
-
-    @Override
-    public Gender getGender() {
-        return super.gender;
-    }
-
-    @Override
-    public int getLifeExpectancy() {
-        return super.lifeExpectancy;
-    }
-
-    @Override
-    public boolean canEat(Food foodName) {
-        boolean b=false;
-        for (Food food : super.eats){
-            if (!b) b= food.equals(foodName);
-        }
-        return b;
-    }
-
-    @Override
-    public void eat(Food food) {
-        if (super.eats.contains(food)){
-            super.health+= food.getHealth();
-            .//qefes waste +=food.getWaste();
-        }
-    }
-
     @Override
     public void treat() {
         stroked();
@@ -62,7 +25,7 @@ public class Tiger extends BigCat{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
+        //eat();
         //clean waste
     }
 

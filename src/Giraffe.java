@@ -12,6 +12,7 @@ public class Giraffe extends Animal{
                        ^^ ^^""";
         super.lifeExpectancy=24;
         super.eats= List.of(Food.HAY,Food.FRUIT);
+        super.animalType=AnimalType.GIRAFFE;
     }
     @Override
     public void treat() {
@@ -25,7 +26,7 @@ public class Giraffe extends Animal{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
+        //eat();
         //clean waste
     }
 }

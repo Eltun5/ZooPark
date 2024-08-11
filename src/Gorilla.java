@@ -13,6 +13,7 @@ public class Gorilla extends APE{
      ((((\\)     (/))))
                 """;
         super.lifeExpectancy=32;
+        super.animalType=AnimalType.GORILLA;
     }
     @Override
     public void treat() {
@@ -26,7 +27,7 @@ public class Gorilla extends APE{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
+        //eat();
         //clean waste
     }
 }

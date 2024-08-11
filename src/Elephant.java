@@ -13,6 +13,7 @@ public class Elephant extends Animal{
                        """;
         super.lifeExpectancy=36;
         super.eats= List.of(Food.HAY,Food.FRUIT);
+        super.animalType=AnimalType.ELEPHANT;
     }
     @Override
     public void treat() {
@@ -26,7 +27,7 @@ public class Elephant extends Animal{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        eat();
+        //eat();
         //clean waste
     }
 }
