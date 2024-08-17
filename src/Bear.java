@@ -2,16 +2,12 @@ import java.util.List;
 
 public class Bear extends Animal {
     public Bear(){
-        super.img= """ 
-   ..------~~~--.__
-  /               c~\\
-  /             \\__ `\\
-  |  /~~--__/  /'\\ ~~'
- /'/'\\ |    | |`\\ \\_
-`-))  `-))  `-)) `-))""";
         super.lifeExpectancy=18;
         super.eats= List.of(Food.FISH,Food.STEAK);
         super.animalType=AnimalType.BEAR;
+    }
+    public void print(){
+        System.out.println(super.FullImg);
     }
     @Override
     public void treat() {
@@ -26,6 +22,5 @@ public class Bear extends Animal {
     public void aMonthPasses() {
         super.decreaseHealth();
         super.age++;
-
     }
 }

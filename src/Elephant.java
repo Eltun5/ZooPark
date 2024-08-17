@@ -2,18 +2,12 @@ import java.util.List;
 
 public class Elephant extends Animal{
     public Elephant() {
-        super.img= """
-                    _    _
-                   /=\\""/=\\
-                  (=(0_0 |=)__
-                   \\_\\ _/_/   )
-                     /_/   _  /\\
-                    |/ |\\ || |
-                       ~ ~  ~
-                       """;
         super.lifeExpectancy=36;
         super.eats= List.of(Food.HAY,Food.FRUIT);
         super.animalType=AnimalType.ELEPHANT;
+    }
+    public void print(){
+        System.out.println(super.FullImg);
     }
     @Override
     public void treat() {

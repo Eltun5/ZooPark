@@ -2,13 +2,6 @@ import java.util.List;
 
 public class Penguin extends Animal{
     public Penguin(){
-        super.img= """    
-                        __
-                     -=(o '.
-                        '.-.\
-                        /|  \\
-                        '|  ||
-                         _\\_):,_""";
         super.lifeExpectancy=15;
         super.eats= List.of(Food.FISH,Food.ICE_CREAM);
         super.animalType=AnimalType.PENGUIN;

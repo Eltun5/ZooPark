@@ -5,16 +5,12 @@ public abstract class Animal {
     protected List<Food> eats;
     protected Gender gender;
     protected int age=0;
-    protected String img;
     protected AnimalType animalType;
-
+    protected String FullImg;
     public Animal() {
         this.gender=(int)(Math.random()*2)==1?Gender.MALE:Gender.FEMALE;
     }
 
-    public String getImg(){
-        return img;
-    }
     public int getAge(){
         return age;
     }
@@ -28,10 +24,9 @@ public abstract class Animal {
         return eats.contains(foodName);
     }
     public int eat(Food food){
-        if (food!=null&&canEat(food)){
+        if (food!=null){
             health+= food.getHealth();
             return food.getWaste();
-
         }
         return 0;
     }
@@ -40,4 +35,12 @@ public abstract class Animal {
     };
     public abstract void treat();
     public abstract void aMonthPasses();
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getHealth() {
+        return health;
+    }
 }

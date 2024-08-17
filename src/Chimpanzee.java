@@ -1,19 +1,5 @@
 public class Chimpanzee extends APE{
     public Chimpanzee() {
-        super.img= """
-                       .="=.
-                     _/.-.-.\\_     _
-                    ( ( o o ) )    ))
-                     |/  "  \\|    //
-                      \\'---'/    //
-                      /`""\"`\\\\  ((
-                     / /_,_\\ \\\\  \\\\
-                     \\_\\\\_'__/ \\  ))
-                     /`  /`~\\  |//
-                    /   /    \\  /
-                ,--`,--'\\/\\    /
-                 '-- "--'  '--'
-                """;
         super.lifeExpectancy=24;
         super.animalType=AnimalType.CHIMPANZEE;
     }
