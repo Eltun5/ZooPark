@@ -1,11 +1,16 @@
-public class Gorilla extends APE{
+package Animals;
+
+import Enums.AnimalType;
+
+public class Gorilla extends APE {
     public Gorilla() {
         super.lifeExpectancy=32;
-        super.animalType=AnimalType.GORILLA;
+        super.animalType= AnimalType.GORILLA;
     }
     @Override
     public void treat() {
         painting();
+        System.out.println(animalType+" painting hp is "+health+".");
     }
 
     public void painting(){
@@ -15,7 +20,6 @@ public class Gorilla extends APE{
     @Override
     public void aMonthPasses() {
         super.decreaseHealth();
-        //eat();
-        //clean waste
+        super.age++;
     }
 }

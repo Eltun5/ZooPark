@@ -1,3 +1,7 @@
+package Other;
+
+import Enums.Food;
+
 import java.util.HashMap;
 
 public class FoodStore {

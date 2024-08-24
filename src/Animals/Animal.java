@@ -1,3 +1,8 @@
+package Animals;
+
+import Enums.AnimalType;
+import Enums.Food;
+import Enums.Gender;
 import java.util.List;
 public abstract class Animal {
     protected int lifeExpectancy;
@@ -8,7 +13,15 @@ public abstract class Animal {
     protected AnimalType animalType;
     protected String FullImg;
     public Animal() {
-        this.gender=(int)(Math.random()*2)==1?Gender.MALE:Gender.FEMALE;
+        this.gender=(int)(Math.random()*2)==1? Gender.MALE: Gender.FEMALE;
+    }
+
+    public AnimalType getAnimalType() {
+        return animalType;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getAge(){
@@ -26,7 +39,9 @@ public abstract class Animal {
     public int eat(Food food){
         if (food!=null){
             health+= food.getHealth();
+            System.out.println(animalType+" eat "+food+" hp is "+health+".");
             return food.getWaste();
+
         }
         return 0;
     }

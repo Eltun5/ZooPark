@@ -1,3 +1,8 @@
+package Other;
+
+import Animals.*;
+import Enums.AnimalType;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,9 +11,9 @@ import java.util.List;
 
 public class Zoo {
     static List<Enclosure> enclosureList = new ArrayList<>();
-
+    static int monthCounter=0;
     public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\aslan\\OneDrive\\Desktop\\ZooGame\\src\\Construct.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/Other/Construct.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(":");
@@ -29,13 +34,15 @@ public class Zoo {
         while (Enclosure.animalNum >= 0) {
             int size = enclosureList.size();
             for (int i = 0; i < size; i++) {
-                if (enclosureList.get(i).hasAnimals.isEmpty()) {
+                if (enclosureList.get(i).getHasAnimals().isEmpty()) {
                     enclosureList.remove(i);
                     i--;
                     size--;
                 }
             }
             enclosureList.forEach(Enclosure::aMonthPasses);
+            monthCounter++;
+            System.out.println("Month is "+monthCounter+".");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             waitViaSec(2);
         }

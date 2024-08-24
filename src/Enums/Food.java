@@ -1,3 +1,5 @@
+package Enums;
+
 public enum Food {
     HAY(1, 4),
     STEAK(3, 4),

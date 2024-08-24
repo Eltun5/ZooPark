@@ -1,17 +1,29 @@
+package Other;
+
+import Animals.Animal;
+import Enums.AnimalType;
+import ZooKeeper.ZooKeeper;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
+import ZooKeeper.*;
 
 public class Enclosure {
     int waste;
     public static int animalNum;
-    List<Animal> hasAnimals=new ArrayList<>();
+    private List<Animal> hasAnimals=new ArrayList<>();
     private final AnimalType animalType;
     private final int numOfEnclosure;
     private static int counterOfEnclosure=0;
-    final FoodStore foodStore;
+    private final FoodStore foodStore;
     private ZooKeeper zooKeeper;
+
+    public List<Animal> getHasAnimals() {
+        return hasAnimals;
+    }
+
+
     public Enclosure(AnimalType animalType) {
         this.animalType = animalType;
         numOfEnclosure=++counterOfEnclosure;
@@ -36,7 +48,7 @@ public class Enclosure {
         if (hasAnimals.size()+animals.length<=20) {
             animalNum+=animals.length;
             Arrays.stream(animals)
-                    .filter(animal -> animal.animalType==this.animalType)
+                    .filter(animal -> animal.getAnimalType()==this.animalType)
                     .forEach(animal -> hasAnimals.add(animal));
         }
     }
@@ -44,14 +56,16 @@ public class Enclosure {
         if (animal!=null){
         hasAnimals.remove(animal);}
         else{
-            System.out.println("You cannot remove null animal.");
+            System.out.println("You cannot remove null animal.");//we can make optional
         }
     }
     public void removeWaste(int waste){
         this.waste-=waste;
+
         if (this.waste<0){
             this.waste=0;
         }
+        System.out.println(numOfEnclosure+". enclosure have "+this.waste+" waste.");
     }
     public void addWaste(int waste){
         this.waste+=waste;
@@ -65,7 +79,6 @@ public class Enclosure {
     public int size(){
         return hasAnimals.size();
     }
-    static int counter;
     public void aMonthPasses(){
         hasAnimals.forEach(Animal::aMonthPasses);
         hasAnimals.forEach(animal -> {
@@ -75,11 +88,11 @@ public class Enclosure {
                             foodStore.hasFood(animalType.getSecondEat()) ?
                                     foodStore.takeFood(animalType.getSecondEat()) : null
             );
-            animal.age++;
+            animal.setAge(animal.getAge()+1);
         });
         int size=hasAnimals.size();
         for (int i = 0; i < size; i++) {
-            if (hasAnimals.get(i).lifeExpectancy==hasAnimals.get(i).age||hasAnimals.get(i).getHealth()<=0) {
+            if (hasAnimals.get(i).getLifeExpectancy()==hasAnimals.get(i).getAge()||hasAnimals.get(i).getHealth()<=0) {
                 hasAnimals.remove(i);
                 i--;
                 size--;
